@@ -55,34 +55,10 @@ const CartItem = ({ food }) => {
           />
         )}
         <CardContent>
-          <Box
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-            mb={1}
-          >
-            <Typography variant="h5">{price}₴</Typography>
-            <Button
-              onClick={() => {
-                dispatch(addToCart(food));
-                toast.success(`${food.name} додано до кошика`);
-              }}
-              variant="contained"
-              sx={{
-                maxWidth: "35px",
-                minWidth: "35px",
-                maxHeight: "35px",
-                minHeight: "35px",
-                "&:hover": {
-                  transform: "scale(1.05)",
-                },
-                padding: "7px",
-              }}
-              color="primary"
-            >
-              <SlBasket size={25} />
-            </Button>
-          </Box>
+          <Typography mb={1} variant="h5">
+            {price}₴
+          </Typography>
+
           <Typography variant="body2" color="text.secondary">
             {name}
           </Typography>
@@ -96,6 +72,29 @@ const CartItem = ({ food }) => {
       >
         {isFavorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
       </IconButton>
+      <Button
+        onClick={() => {
+          dispatch(addToCart(food));
+          toast.success(`${food.name} додано до кошика`);
+        }}
+        variant="contained"
+        sx={{
+          position: "absolute",
+          right: "15px",
+          bottom: "43px",
+          maxWidth: "35px",
+          minWidth: "35px",
+          maxHeight: "35px",
+          minHeight: "35px",
+          "&:hover": {
+            transform: "scale(1.05)",
+          },
+          padding: "7px",
+        }}
+        color="primary"
+      >
+        <SlBasket size={25} />
+      </Button>
     </Card>
   );
 };
