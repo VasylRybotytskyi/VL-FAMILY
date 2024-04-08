@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import CartGrid from "../components/CartGrid";
 import FilterBar from "../components/FilterBar";
-import { useQuerySneakerQuery } from "../redux/services/foodApi";
 import Box from "@mui/material/Box";
+import { useQueryFoodQuery } from "../redux/services/foodApi";
 
 const Products = () => {
-  const { data } = useQuerySneakerQuery();
+  const { data } = useQueryFoodQuery();
   const [foods, setFoods] = useState([]);
   const [activeCategory, setActiveCategory] = useState("");
 

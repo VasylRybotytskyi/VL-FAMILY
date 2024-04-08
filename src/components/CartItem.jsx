@@ -13,7 +13,6 @@ import {
 } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import Box from "@mui/material/Box";
 import { SlBasket } from "react-icons/sl";
 import Button from "@mui/material/Button";
 import { addToCart } from "../redux/slices/cartSlice";
@@ -25,13 +24,14 @@ const CartItem = ({ food }) => {
 
   const { id, images, name, price } = food;
   const isFavorite = favoriteData.some((item) => item.id === id);
-  console.log(isFavorite);
 
   const handleToggleFavorite = () => {
     if (isFavorite) {
       dispatch(removeFromFavorite(id));
+      toast.error(`${name} видалено із спику улюблених`);
     } else {
       dispatch(addToFavorite(food));
+      toast.success(`${name} додано до спику улюблених`);
     }
   };
 
@@ -56,7 +56,7 @@ const CartItem = ({ food }) => {
         )}
         <CardContent>
           <Typography mb={1} variant="h5">
-            {price}₴
+            {price}₴/кг
           </Typography>
 
           <Typography variant="body2" color="text.secondary">

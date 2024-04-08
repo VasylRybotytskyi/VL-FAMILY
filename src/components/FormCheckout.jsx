@@ -21,9 +21,10 @@ const FormCheckout = () => {
 
   const onSubmit = (data) => {
     if (isValid) {
-      toast.success("Замовлення успішно оформлено, очікуйте на дзвінок");
+      toast.success(
+        `${data.name},ваше замовлення оформлено, очікуйте на дзвінок`
+      );
       navigate("/");
-      console.log(data);
     }
   };
 

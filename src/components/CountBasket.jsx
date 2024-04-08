@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, IconButton, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
@@ -9,7 +8,6 @@ import {
 } from "../redux/slices/cartSlice";
 
 const CountBasket = ({ cart }) => {
-  console.log(cart);
   const dispatch = useDispatch();
 
   const handleDecrement = () => {

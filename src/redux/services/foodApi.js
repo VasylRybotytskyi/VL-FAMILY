@@ -7,7 +7,7 @@ export const foodApi = createApi({
   baseQuery: fakeBaseQuery(),
   tagTypes: ["Post"],
   endpoints: (builder) => ({
-    fetchSingleSneaker: builder.query({
+    fetchSingleFood: builder.query({
       async queryFn(id) {
         try {
           const docRef = doc(db, "sneakers", id);
@@ -19,20 +19,18 @@ export const foodApi = createApi({
       },
       providesTags: ["Post"],
     }),
-    querySneaker: builder.query({
+    queryFood: builder.query({
       async queryFn() {
         try {
-          const sneakersRef = collection(db, "foods");
-          let sneakers = [];
-          const querySnapshot = await getDocs(sneakersRef);
+          const foodsRef = collection(db, "foods");
+          let foods = [];
+          const querySnapshot = await getDocs(foodsRef);
 
           querySnapshot.forEach((doc) => {
-            sneakers.push({ id: doc.id, ...doc.data() });
+            foods.push({ id: doc.id, ...doc.data() });
           });
 
-          console.log("Filtered sneakers:", sneakers.length);
-
-          return { data: sneakers };
+          return { data: foods };
         } catch (error) {
           return { error };
         }
@@ -40,7 +38,7 @@ export const foodApi = createApi({
       providesTags: ["Post"],
     }),
 
-    searchSneaker: builder.query({
+    searchFood: builder.query({
       async queryFn({ q }) {
         try {
           const sneakersRef = collection(db, "sneakers");
@@ -66,7 +64,7 @@ export const foodApi = createApi({
 });
 
 export const {
-  useSearchSneakerQuery,
-  useFetchSingleSneakerQuery,
-  useQuerySneakerQuery,
+  useSearchFoodQuery,
+  useFetchSingleFoodQuery,
+  useQueryFoodQuery,
 } = foodApi;

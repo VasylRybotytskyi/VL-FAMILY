@@ -1,10 +1,9 @@
-import React from "react";
-import { useSelector } from "react-redux"; // Додайте імпорт useSelector
+import { useSelector } from "react-redux";
 import { Typography, Grid, Container } from "@mui/material";
 import CartItem from "../components/CartItem";
 
 const Favorite = () => {
-  const { favoriteData } = useSelector((state) => state.favorite); // Виправлено помилку в useSelector
+  const { favoriteData } = useSelector((state) => state.favorite);
 
   return (
     <Container sx={{ my: 3 }}>

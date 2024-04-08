@@ -4,9 +4,9 @@ const buttons = [
   { name: "Всі", value: "" },
   { name: "Фрукти", value: "fruit" },
   { name: "Овочі", value: "vegetable" },
+  { name: "Гриби", value: "mushrooms" },
   { name: "Мясо", value: "meat" },
   { name: "Риба", value: "fish" },
-  { name: "Молочні", value: "dairy" },
 ];
 
 const FilterBar = ({ activeCategory, setActiveCategory }) => {

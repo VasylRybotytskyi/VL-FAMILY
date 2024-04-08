@@ -1,4 +1,3 @@
-import React from "react";
 import { Card, CardMedia } from "@mui/material";
 
 const SwiperCart = ({ food }) => {

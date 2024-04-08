@@ -3,7 +3,6 @@ import CartItem from "./CartItem";
 import Container from "@mui/material/Container";
 
 const CartGrid = ({ foods }) => {
-  console.log(foods);
   return (
     <section
       style={{

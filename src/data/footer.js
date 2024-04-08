@@ -1,9 +1,9 @@
 import Instagram from "../assets/icons/Instagram.svg";
-import Facebook from "../assets/icons/facebook.svg";
-import GitHub from "../assets/icons/github.svg";
+import Twitter from "../assets/icons/twitter.svg";
+import Telegram from "../assets/icons/telegram.svg";
 
 export const icons = [
   { icon: Instagram, link: "https://www.instagram.com/" },
-  { icon: Facebook, link: "https://www.facebook.com/" },
-  { icon: GitHub, link: "https://github.com/" },
+  { icon: Telegram, link: "https://web.telegram.org/k/" },
+  { icon: Twitter, link: "https://twitter.com/?lang=uk" },
 ];

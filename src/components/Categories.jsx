@@ -1,14 +1,14 @@
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import { useQuerySneakerQuery } from "../redux/services/foodApi";
+import { useQueryFoodQuery } from "../redux/services/foodApi";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { Card, CardMedia } from "@mui/material";
 
 const Categories = () => {
-  const { data } = useQuerySneakerQuery();
-  console.log(data);
+  const { data } = useQueryFoodQuery();
+
   return (
     <Box
       component="section"

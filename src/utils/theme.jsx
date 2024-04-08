@@ -4,15 +4,12 @@ const theme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#000",
+      main: "#2A2B2C",
     },
     secondary: {
       main: "#F2F3F8",
     },
   },
-  // typography: {
-  //   fontFamily: ["Pacifico", "cursive"].join(","),
-  // },
 });
 
 const responsiveTheme = responsiveFontSizes(theme);

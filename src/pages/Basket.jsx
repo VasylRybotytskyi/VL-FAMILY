@@ -1,10 +1,8 @@
 import {
   Box,
-  //   Button,
   Container,
   Divider,
   Grid,
-  //   List,
   Paper,
   Stack,
   Typography,
@@ -20,8 +18,10 @@ import ModalCheckout from "../components/ModalCheckout";
 const Basket = () => {
   const { cartData } = useSelector((state) => state.cart);
 
+  const delivery = 120;
+
   const totalAmount = cartData.reduce((acc, { price, quantity }) => {
-    const itemTotal = price * quantity;
+    const itemTotal = price * quantity + delivery;
     return acc + itemTotal;
   }, 0);
 
@@ -42,6 +42,7 @@ const Basket = () => {
                   sx={{
                     display: "flex",
                     justifyContent: "space-between",
+                    flexDirection: { xs: "column", sm: "row" },
                     alignItems: "center",
                     gap: 2,
                     padding: "10px",
@@ -93,8 +94,8 @@ const Basket = () => {
               <Typography variant="h5">Підсумок</Typography>
               <Divider />
               <Typography>Кількість товарів: {cartData?.length}</Typography>
-              <Typography>Доставка Нова Пошта: від 70₴</Typography>
-              <Typography>Комісія за переказ коштів: 20₴ + 2%</Typography>
+              <Typography>Доставка: від {delivery}₴</Typography>
+              <Typography>Доставка за межами міста: 20₴/км</Typography>
 
               <Divider />
               <Typography>До сплати:{totalAmount}₴</Typography>
